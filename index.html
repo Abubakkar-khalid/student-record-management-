@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Student Records</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+		/>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Student Result</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+					<button class="btn btn-outline-success ms-2" id="themeToggle">
+						<i class="bi bi-moon" id="icon"></i>
+					</button>
+				</div>
+			</div>
+		</nav>
+
+		<main class="container mt-5">
+			<div class="" role="alert" id="alert-message"></div>
+			<div class="card">
+				<div class="card-body">
+					<div class="card">
+						<div class="card-body">
+							<div class="card-title">Student Detail</div>
+							
+							<form id="student-detail">
+								<div class="row">
+									<div class="col-4 mb-3">
+										<label for="inputEmail4" class="form-label">Roll No</label>
+										<input
+											type="text"
+											name="rollno"
+											class="form-control"
+											placeholder="Roll No"
+											aria-label="Roll no"
+										/>
+										<div class="invalid-feedback d-none" id="rollno-message">
+											Rollno field must not be empty.
+										</div>
+									</div>
+									<div class="col-4 mb-3">
+										<label for="inputEmail4" class="form-label">Name</label>
+										<input
+											type="text"
+											name="name"
+											class="form-control"
+											placeholder="Full Name"
+											aria-label="Full Name"
+										/>
+										<div class="invalid-feedback d-none" id="name-message">
+											Name field must not be empty.
+										</div>
+									</div>
+									<div class="col-4 mb-3">
+										<label for="inputEmail4" class="form-label">Class</label>
+										<input
+											type="text"
+											name="class"
+											class="form-control"
+											placeholder="Enter Class"
+											aria-label="Enter Class"
+										/>
+										<div class="invalid-feedback d-none" id="class-message">
+											Class field must not be empty.
+										</div>
+									</div>
+									<div class="col-3 mb-3">
+										<label for="inputEmail4" class="form-label">Math</label>
+										<input
+											type="number"
+											name="math"
+											class="form-control"
+											placeholder="Enter Math Marks"
+											aria-label="Enter Math Marks"
+										/>
+										<div class="invalid-feedback d-none" id="math-message">
+											Math field must not be empty.
+										</div>
+									</div>
+									<div class="col-3 mb-3">
+										<label for="inputEmail4" class="form-label">Physics</label>
+										<input
+											type="number"
+											name="physics"
+											class="form-control"
+											placeholder="Enter Physics Marks"
+											aria-label="Enter Physics Marks"
+										/>
+										<div class="invalid-feedback d-none" id="physics-message">
+											Physics field must not be empty.
+										</div>
+									</div>
+									<div class="col-3 mb-3">
+										<label for="inputEmail4" class="form-label"
+											>Chemistry</label
+										>
+										<input
+											type="number"
+											name="chemistry"
+											class="form-control"
+											placeholder="Enter Chemistry Marks"
+											aria-label="Enter Chemistry Marks"
+										/>
+										<div class="invalid-feedback d-none" id="chemistry-message">
+											Chemistry field must not be empty.
+										</div>
+									</div>
+									<div class="col-3 mb-3">
+										<label for="inputEmail4" class="form-label">Computer</label>
+										<input
+											type="number"
+											name="computer"
+											class="form-control"
+											placeholder="Enter Computer Marks"
+											aria-label="Enter Computer Marks"
+										/>
+										<div class="invalid-feedback d-none" id="computer-message">
+											Computer field must not be empty.
+										</div>
+									</div>
+									<div class="col-12 d-flex justify-content-end">
+										<div>
+											<button
+												type="submit"
+												class="btn btn-outline-primary align-items-center"
+											>
+												<i class="bi bi-box-arrow-down me-2"></i> Save Record
+											</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+					<div class="card mt-3">
+						<div class="card-body">
+							<div class="card-title">Student Details</div>
+							<div class="table-responsive">
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th>Roll No</th>
+											<th>Name</th>
+											<th>Class</th>
+											<th>Math Marks</th>
+											<th>Physics Marks</th>
+											<th>Chemistry Marks</th>
+											<th>Computer Marks</th>
+											<th>Obtain Marks</th>
+											<th>Total Marks</th>
+											<th>Percentage</th>
+											<th>Grade</th>
+											<th>Action</th>
+										</tr>
+									</thead>
+									<tbody id="data">
+										<tr>
+											<td>301-20152</td>
+											<td>Waleed ur Rehman</td>
+											<td>1st Semster</td>
+											<td>100</td>
+											<td>80</td>
+											<td>50</td>
+											<td>100</td>
+											<td>330</td>
+											<td>400</td>
+											<td>70%</td>
+											<td>B</td>
+											<td>
+												<div class="d-flex">
+													<button class="btn btn-sm btn-info ms-2">
+														<i class="bi bi-eye"></i>
+													</button>
+													<button class="btn btn-sm btn-warning ms-2">
+														<i class="bi bi-pencil"></i>
+													</button>
+													<button class="btn btn-sm btn-danger ms-2">
+														<i class="bi bi-trash"></i>
+													</button>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+			crossorigin="anonymous"
+		></script>
+		<script src="./index.js"></script>
+	</body>
+</html>
